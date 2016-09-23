@@ -1,0 +1,19 @@
+{
+  "bindings": [
+    {
+      "name": "inputBlob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "imagesin",
+      "connection": "function821251a1b074_STORAGE"
+    },
+    {
+      "type": "blob",
+      "name": "outputBlob",
+      "path": "imagesout/{rand-guid}",
+      "connection": "function821251a1b074_STORAGE",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
