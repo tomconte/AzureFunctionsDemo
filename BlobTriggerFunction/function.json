@@ -3,14 +3,15 @@
     {
       "name": "inputBlob",
       "type": "blobTrigger",
+      "dataType": "binary",
       "direction": "in",
-      "path": "imagesin",
+      "path": "images-in/{name}",
       "connection": "function821251a1b074_STORAGE"
     },
     {
       "type": "blob",
       "name": "outputBlob",
-      "path": "imagesout/{rand-guid}",
+      "path": "images-out/{name}",
       "connection": "function821251a1b074_STORAGE",
       "direction": "out"
     }
