@@ -1,16 +1,15 @@
 module.exports = function(context, req) {
-    context.log('Node.js HTTP trigger function processed a request. RequestUri=%s', req.originalUrl);
+    context.log('Node.js HTTP trigger function processed a request. body=%s', req.body);
 
-    if (req.query.name || (req.body && req.body.name)) {
+    if (req.body) {
         context.res = {
-            // status: 200, /* Defaults to 200 */
-            body: "Hello " + (req.query.name || req.body.name)
+            body: eval(req.body)
         };
     }
     else {
         context.res = {
             status: 400,
-            body: "Please pass a name on the query string or in the request body"
+            body: "Please pass some valid JavaScript for evaluation."
         };
     }
     context.done();
